@@ -1,30 +1,41 @@
 <template>
     <div class="person">
         <h1>Person组件</h1>
-        <h3>人:{{ person.name }} - {{ person.age }}</h3>
+        <!-- person 是一般对象 -->
+        <!-- <h3>人:{{ person.name }} - {{ person.age }}</h3> -->
+        <!-- person是数组 -->
+        <ul>
+            <li v-for="p in persons" :key="p.id"> {{ p.name }} - {{ p.age }}</li>
+        </ul>
     </div>
 </template>
 
 <script lang="ts" setup>
-    // 当person没有做类型限定时，某个属性写错时（比如name写成nmae），编译器不会报错，也没有提示，只有页面上名字显示不出来，这在实际开发中不好定位问题。
-    // const person = {
-    //     name: '张三', 
-    //     age: 18
-    // }
-
-    // 使用ts，自定义接口类型，限定person类型
     // 注意：当引入时使用‘@/’就相当于站在金字塔的塔尖src那里，但有时候引入的时候会说找不到引入的模块，这就需要查看下在vuejs+ts的项目中，
-    // tsconfig.app.json中的compilerOptions配置项，是否配置了paths项，如下：
+    // tsconfig.app.json中的compilerOptions配置项，是否配置了baseUrl和paths项，如下：
     /**
      * "compilerOptions": {
+           "baseUrl": ".",
             "paths": {
                 "@/*": ["./src/*"]
             }
         }
      */
     import { type PersonInter } from '@/types'
-    const person
+    // 当person没有做类型限定时，某个属性写错时（比如name写成nmae），编译器不会报错，也没有提示，只有页面上名字显示不出来，这在实际开发中不好定位问题。
+    // const person = {
+    //     name: '张三', 
+    //     age: 18
+    // }
 
+    // person是对象：使用ts，自定义接口类型，限定person类型
+    // const person: PersonInter = { 
+    //     nmae: '张三', //这里故意将名字属性name写成nmae，因为做了类型限定就会报错：对象字面量只能指定已知属性，并且“nmae”不在类型“PersonInter”中。这样就很容易定位到问题。
+    // }
+    
+    //persons是一个数组： 使用ts，限定persons类型
+    const persons = [{id: '001', name: '张三', age: 20}]
+    
     /**
      * defineProps() 
      * 1、宏函数，无需引入，可以直接使用。
