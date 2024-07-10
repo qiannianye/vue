@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- 入口容器 -->
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts">
+      // Vue.config.devtools = true //打开调试vue.devtool.js
+
+      //注：
+      //1、vite项目的入口文件是index.html，在项目的根目录下，不在src里，不是main.js/main.ts。
+      //2、且在入口文件的script标签中要引入/src/main.ts或/src/main.js文件。且要准备好容易接收App.vue。
+    </script>
+  </body>
+</html>
