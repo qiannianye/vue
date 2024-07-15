@@ -4,15 +4,8 @@
         <div class="navigator">
             <!-- 设置active-class，当点击的时候会自动高亮 -->
             <RouterLink class="title" to="/home" active-class="active">首页</RouterLink>
-            <RouterLink class="title" to="/news" replace active-class="active">新闻</RouterLink>
-            <!-- to：字符串写法, 普通字符串，只能静态 -->
-            <!-- <RouterLink class="title" to="/about" active-class="active">关于</RouterLink> -->
-            <!-- to：字符串写法, 模板字符串，可动态 -->
-            <!-- <RouterLink class="title" :to="`/about`" active-class="active">关于</RouterLink> -->
-            <!-- to：对象写法, 使用path -->
-            <!-- <RouterLink class="title" :to="{ path: '/about'}" active-class="active">关于</RouterLink> -->
-            <!-- to: 对象写法，使用name -->
-            <RouterLink class="title" :to="{ name: 'guanyu'}" active-class="active">关于</RouterLink>
+            <RouterLink class="title" to="/news" active-class="active">新闻</RouterLink>
+            <RouterLink class="title" to="/about" active-class="active">关于</RouterLink>
         </div>
         <div class="content">
             <!-- 使用RouterLink跳转的时候，需要使用RouterView占位，告诉路由器要展示的内容在这里展示 -->
@@ -22,11 +15,7 @@
 </template>
 
 <script lang='ts' setup>
-    // RouterLink, RouterView 可以不需要引入，直接在template中使用
     import { RouterLink, RouterView } from 'vue-router'
-
-    // 路由的replace模式，替换，回不去
-    // 路由的push模式，进栈，能回来
 </script>
 
 <style scoped>

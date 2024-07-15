@@ -2,8 +2,13 @@
     <div>我是news</div>
     <ul>
         <li v-for="n in newsList" :key="n.id">
+            <!-- 注意这里to的值要写完整的路径“/news/detail”，不能只写一个“/detail”，写‘/detail’路由规则就会被认为是跳转到‘/detail‘，而不是’/news/detail‘。 -->
+            <!-- query传参数写法一：利用模板字符串，在路径后面拼接【?➕key=value&key=value】 -->
+            <!-- <RouterLink :to="`/news/detail?id=${n.id}&title=${n.title}&content=${n.content}`">{{ n.title }}</RouterLink> -->
+            <!-- query传参数写法二：利用对象path或者name属性 -->
             <RouterLink 
                 :to="{
+                    // path: '/news/detail', // path属性，只写到路径的地方
                     name: 'xiang',
                     query: {
                         id: n.id,
@@ -11,10 +16,8 @@
                         content: n.content
                     }
                 }"
-                replace
             >
             {{ n.title }}
-            <button @click="scanNews">查看</button>
             </RouterLink>
         </li>
     </ul>
@@ -25,12 +28,7 @@
 
 <script lang='ts' setup name="News">
 
-    import { useRouter } from 'vue-router'
     import { reactive, onMounted, onUnmounted } from 'vue'
-    const router = useRouter()
-    const a_obj = reactive({
-        b: '123'
-    })
 
     const newsList = reactive([{
         id: '001',
@@ -57,11 +55,6 @@
     onUnmounted(() => {
         console.log('@@News组件卸载了')
     })
-
-    // 点击按钮 查看新闻
-    function scanNews() {
-        router
-    }
 </script>
 
 <style scoped>

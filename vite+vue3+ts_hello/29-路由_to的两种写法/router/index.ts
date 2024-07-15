@@ -25,7 +25,6 @@
 import About from '@/pages/About.vue'
 import Home from '@/pages/Home.vue'
 import News from '@/pages/News.vue'
-import NewsDetail from '@/pages/NewsDetail.vue'     
 
 // 从vue-router中引入创建路由器router的方法createRouter
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
@@ -41,33 +40,7 @@ export default createRouter({
     }, {
         name: 'xinwen',
         path: '/news',
-        component: News,
-        children: [ //childern:是一个数组，配置子集路由，数组中的对象和父级一样，配置path和comoonent,也可以命名，以及传参数。
-            {
-                name: 'xiang', // 命名子路由
-                // path: 'detail/:id/:title/:content/:a',
-                // path: 'detail/:id/:title/:content?', //注意注意！params方式传递参数的时候，一定要先占位！！！占位规则是：【/:参数名】,参数名后面加【?】表示可传可不传，不加【?】表示必传，不传会报错。
-                path: 'detail',
-                component: NewsDetail,
-                // props第一种写法，bool值配置，作用：将收到的【params】参数中的每一组key-value作为props传递给NewsDetail组件。简单说query传参的时候不能使用bool的写法。
-                // props: true, //这种方式，只有params方式传参的时候才能配置props属性，相当于<NewsDetail id="xxx" title="xxx" content="xxx" />,接收参数的时候可以直接接收props参数。
-
-                // props第二种写法，函数写法，作用：将返回的对象的每一组key-value作为props传递给NewsDetail组件。可以自己决定返回什么作为props传递给组件NewsDetail。
-                props(route) {
-                    // console.log('@@props 函数写法中的参数route:', route)
-                    // return route.params  //当params传参的时候没必要使用函数写法，直接bool写法就行，配置props为true就可以了。
-                    return route.query
-                },
-
-                // props第三种写法，对象写法，将对象中的每一组key-value作为props传递给NewsDetail组件。这种只能写固定的对象值，基本没啥意义，基本不用。
-                // props: {
-                //     a: 100,
-                //     b: 200
-                // }
-
-                // 总结：query传参的时候想打开props模式，就使用函数写法。params传参的时候，想打开props模式，就用bool写法。
-            }
-        ]
+        component: News
     }, {
         name: 'guanyu',
         path: '/about',

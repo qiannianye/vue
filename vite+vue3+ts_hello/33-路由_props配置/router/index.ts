@@ -54,7 +54,7 @@ export default createRouter({
 
                 // props第二种写法，函数写法，作用：将返回的对象的每一组key-value作为props传递给NewsDetail组件。可以自己决定返回什么作为props传递给组件NewsDetail。
                 props(route) {
-                    // console.log('@@props 函数写法中的参数route:', route)
+                    console.log('@@props 函数写法中的参数route:', route)
                     // return route.params  //当params传参的时候没必要使用函数写法，直接bool写法就行，配置props为true就可以了。
                     return route.query
                 },

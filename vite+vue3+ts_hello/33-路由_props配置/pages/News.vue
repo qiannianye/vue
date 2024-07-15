@@ -2,19 +2,33 @@
     <div>我是news</div>
     <ul>
         <li v-for="n in newsList" :key="n.id">
+            <!-- 注意这里to的值要写完整的路径“/news/detail”，不能只写一个“/detail”，写‘/detail’路由规则就会被认为是跳转到‘/detail‘，而不是’/news/detail‘。 -->
+            <!-- params传参数写法一：利用模板字符串，在配置路由的地方先占位，然后在传递的地方直接拼接参数的值 -->
+            <!-- <RouterLink :to="`/news/detail/${n.id}/${n.title}/${n.content}`">{{ n.title }}</RouterLink> -->
+            <!-- params传参数写法二：利用对象path或者name属性 -->
             <RouterLink 
                 :to="{
+                    // 注意：在使用params方式传参的时候，对象写法的时候不能使用path，会被忽略,切换不起作用，只能使用name。控制台警告如下:
+                    // Path '/news/detail' was passed with params but they will be ignored. Use a named route alongside params instead. 
+                    // path: '/news/detail',
                     name: 'xiang',
+                    // params: {
+                    //     id: n.id,
+                    //     title: n.title,
+                    //     // content: n.content,
+                    //     content: n.content,
+                    //     // a: [1,2,3,4], // params中不能传递数组类型的属性，否则报错
+                    //     // a: a_obj //params中也不能传递对象类型的属性，否则报错
+                    // }
+
                     query: {
                         id: n.id,
                         title: n.title,
                         content: n.content
                     }
                 }"
-                replace
             >
             {{ n.title }}
-            <button @click="scanNews">查看</button>
             </RouterLink>
         </li>
     </ul>
@@ -25,9 +39,8 @@
 
 <script lang='ts' setup name="News">
 
-    import { useRouter } from 'vue-router'
-    import { reactive, onMounted, onUnmounted } from 'vue'
-    const router = useRouter()
+    import type { title } from 'process';
+import { reactive, onMounted, onUnmounted } from 'vue'
     const a_obj = reactive({
         b: '123'
     })
@@ -57,11 +70,6 @@
     onUnmounted(() => {
         console.log('@@News组件卸载了')
     })
-
-    // 点击按钮 查看新闻
-    function scanNews() {
-        router
-    }
 </script>
 
 <style scoped>

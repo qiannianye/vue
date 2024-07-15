@@ -4,7 +4,7 @@
         <div class="navigator">
             <!-- 设置active-class，当点击的时候会自动高亮 -->
             <RouterLink class="title" to="/home" active-class="active">首页</RouterLink>
-            <RouterLink class="title" to="/news" replace active-class="active">新闻</RouterLink>
+            <RouterLink class="title" to="/news" active-class="active">新闻</RouterLink>
             <!-- to：字符串写法, 普通字符串，只能静态 -->
             <!-- <RouterLink class="title" to="/about" active-class="active">关于</RouterLink> -->
             <!-- to：字符串写法, 模板字符串，可动态 -->
@@ -22,11 +22,7 @@
 </template>
 
 <script lang='ts' setup>
-    // RouterLink, RouterView 可以不需要引入，直接在template中使用
     import { RouterLink, RouterView } from 'vue-router'
-
-    // 路由的replace模式，替换，回不去
-    // 路由的push模式，进栈，能回来
 </script>
 
 <style scoped>
