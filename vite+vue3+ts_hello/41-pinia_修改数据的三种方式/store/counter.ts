@@ -7,7 +7,7 @@ import { defineStore } from "pinia";
 // 一般store都是以use命名开头，写成hooks的形式
 // 选项式写法的store
 export const useCounterStore = defineStore('counter', {
-    // action里存放的是真正修改数据的一个个的方法,用于响应组件的各个“动作”.
+    // actions里存放的是真正修改数据的一个个的方法,用于响应组件的各个“动作”.
     actions: {
         increment(value: number) {
             // console.log('@@increment被调用了!',value)
