@@ -63,3 +63,5 @@ export const useTalkStore = defineStore('talk', () => {
 
     return { talkList, getTalk}
 })
+
+

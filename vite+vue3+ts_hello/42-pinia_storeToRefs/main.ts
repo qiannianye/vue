@@ -6,9 +6,6 @@ import App from './App.vue'
 
 // 引入pinia
 import { createPinia } from 'pinia'
-// 引入路由器
-import router from './router'
-
 
 // 创建根组件app
 const app = createApp(App)
@@ -17,8 +14,6 @@ const app = createApp(App)
 const pinia = createPinia()
 // 使用pinia
 app.use(pinia)
-// 使用路由器
-app.use(router)
 
 // 挂载根组件到根div容器上
 app.mount('#app')
