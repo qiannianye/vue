@@ -1,14 +1,14 @@
 <template>
     <h3>vue3组件通信</h3>
     <div class="navigator">
-        <RouterLink class="navigator-item" to="/props">1、props</RouterLink>
-        <RouterLink class="navigator-item" to="/custom-event">2、custom-event</RouterLink>
-        <RouterLink class="navigator-item" to="/mitt">3、miit</RouterLink>
-        <RouterLink class="navigator-item" to="/props">4、v-model</RouterLink>
-        <RouterLink class="navigator-item" to="/props">1、props传值</RouterLink>
-        <RouterLink class="navigator-item" to="/props">1、props传值</RouterLink>
-        <RouterLink class="navigator-item" to="/props">1、props传值</RouterLink>
-        <RouterLink class="navigator-item" to="/props">1、props传值</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/props">1、props</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/custom-event">2、custom-event</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/mitt">3、miit</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/model">4、v-model</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
     </div>
     <div class="content">
         <RouterView></RouterView>
@@ -43,6 +43,10 @@
         padding: 10px;
         margin-top: 10px;
         color: cadetblue;
+    }
+    .navigator .active {
+        background: skyblue;
+        color: white;
     }
 
     .content {

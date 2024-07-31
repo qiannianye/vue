@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Props from '@/pages/01_props/Father.vue'
 import CustomEvent from '@/pages/02_custom-event/Father.vue'
 import Mitt from '@/pages/03_mitt/Father.vue'
+import VModel from '@/pages/04_v-model/Father.vue'
 
 
 export default createRouter({
@@ -18,6 +19,10 @@ export default createRouter({
         {
             path: '/mitt',
             component: Mitt
+        },
+        {
+            path: '/model',
+            component: VModel
         }
     ]
 })
