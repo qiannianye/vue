@@ -5,10 +5,11 @@
         <RouterLink class="navigator-item" active-class="active" to="/custom-event">2、custom-event</RouterLink>
         <RouterLink class="navigator-item" active-class="active" to="/mitt">3、miit</RouterLink>
         <RouterLink class="navigator-item" active-class="active" to="/model">4、v-model</RouterLink>
-        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
-        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
-        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
-        <RouterLink class="navigator-item" active-class="active" to="/props">1、props传值</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/attrs">5、attrs透传</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/refs">6、$refs和$parent</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/provide">7、provide和inject</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/pinia">8、pinia</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/slot-default">9、slot-默认插槽</RouterLink>
     </div>
     <div class="content">
         <RouterView></RouterView>

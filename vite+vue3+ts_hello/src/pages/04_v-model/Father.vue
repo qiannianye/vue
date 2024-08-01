@@ -1,5 +1,6 @@
 <template>
     <div class="father">
+        【适用于表单（input）父子间的通信，父传子，子传父】
         <h4>我是父组件</h4>
         <!-- 在html标签上使用v-model -->
         <!-- <input v-model="userName"> -->
