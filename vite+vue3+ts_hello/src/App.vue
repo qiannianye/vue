@@ -9,7 +9,7 @@
         <RouterLink class="navigator-item" active-class="active" to="/refs">6、$refs和$parent</RouterLink>
         <RouterLink class="navigator-item" active-class="active" to="/provide">7、provide和inject</RouterLink>
         <RouterLink class="navigator-item" active-class="active" to="/pinia">8、pinia</RouterLink>
-        <RouterLink class="navigator-item" active-class="active" to="/slot-default">9、slot-默认插槽</RouterLink>
+        <RouterLink class="navigator-item" active-class="active" to="/slot">9、slot-默认插槽</RouterLink>
     </div>
     <div class="content">
         <RouterView></RouterView>
