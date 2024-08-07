@@ -11,8 +11,9 @@
                     </url>
                 </template>
             </Category>
+            <!-- 具名插槽的简写：#，语法糖 -->
             <Category title="美食推荐">
-                <template v-slot:s2>
+                <template #s2>
                     <img :src="imgUrl"/>
                 </template>
             </Category>
@@ -26,8 +27,8 @@
 </template>
 
 <script lang='ts' setup>
-    import { reactive, ref } from 'vue';
-    import Category from './Category.vue';
+    import { reactive, ref } from 'vue'
+    import Category from './Category.vue'
 
     let games = reactive([
         {id: '001', name: '斗罗大陆'},
@@ -44,7 +45,7 @@
 <style scoped>
    .slot {
         width: auto;
-        background: cyan;
+        background: cyan;    
         margin-top: 20px;
     }
     .content {

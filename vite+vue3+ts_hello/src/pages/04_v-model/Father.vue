@@ -18,16 +18,50 @@
         <!-- 但是在使用v-model的时候可以改名字, 比如下面，意味着在子组件接收props的时候应该接收mingzi，声明事件时应该是update:mingzi  -->
         <!-- <BetInput v-model:mingzi="userName"/> -->
         <!-- 通过改名字，一个组件上可以写多个v-model -->
-        <BetInput v-model:mingzi="userName" v-model:mima="password"/>
+        <!-- <BetInput v-model:mingzi="userName" v-model:mima="password"/> -->
+
+        <br>
+        <button @click="showChild = 2">vue3.4+的v-model</button>
+        <button @click="showChild = 1">vue3.4之前的v-model</button>
+        <!-- 动态组件 -->
+        <!-- <component :is="showChild == 1 ? 'BetInput' : 'BeautifulInput'"></component> -->
+
+        <!-- vue3.4之前 -->
+        <template v-if="showChild == 1">
+            <BetInput v-model:mingzi="userName" v-model:mima="password"/>
+        </template>
+        <!-- vue3.4及之后 -->
+        <template v-if="showChild == 2">
+            <!-- <BeautifulInput v-model="userName"/> -->
+            <!-- 别名的v-model -->
+            <!-- <BeautifulInput v-model:mingzi="userName" /> -->
+            <!-- 多个v-model -->
+            <!-- <BeautifulInput v-model:mingzi="userName" v-model:mima="password" /> -->
+            <!-- v-model自定义修饰符 -->
+            <BeautifulInput v-model.capitalize="userName"/>
+        </template>
     </div>
 </template>
+
+<script lang='ts'>
+// 注册组件
+export default {
+   components: {
+    BetInput,
+    BeautifulInput
+   }
+}
+</script>
+
 
 <script lang='ts' setup name="VModel">
     import { ref } from 'vue'
     import BetInput from './BetInput.vue';
-
-    let userName = ref('张三')
+    import BeautifulInput from './BeautifulInput.vue';
+    
+    let userName = ref('zhangsan')
     let password = ref('123')
+    let showChild = ref(1) 
 
     // 注意点：关于$event，什么时候能写$event.target.value? 什么时候不能？
     // 主要是看$event是什么？

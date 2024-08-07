@@ -1,6 +1,6 @@
 <template>
     <div class="child">
-        <h4>我是子组件</h4>
+        <h4>我是子组件：vue3.4之前的写法</h4>
         <!-- 默认写法 -->
         <!-- <input :value="modelValue" @input="emit('update:modelValue', (<HTMLInputElement>$event.target).value)"> -->
 

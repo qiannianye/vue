@@ -9,7 +9,7 @@ import ProvideFather from '@/pages/07_provide-inject/Father.vue'
 import PiniaFather from '@/pages/08_pinia/Father.vue'
 import SlotFather from '@/pages/09_slot/Father.vue'
 import DefaultSlot from '@/pages/09_slot/DefaultSlot.vue'
-import NameSlot from '@/pages/09_slot/NameSlot.vue'
+import NamedSlot from '@/pages/09_slot/NamedSlot.vue'
 import ScopeSlot from '@/pages/09_slot/ScopeSlot.vue'
 
 
@@ -49,7 +49,7 @@ export default createRouter({
                     component: DefaultSlot
                 }, {
                     path: 'name',
-                    component: NameSlot
+                    component: NamedSlot
                 }, {
                     path: 'scope',
                     component: ScopeSlot
