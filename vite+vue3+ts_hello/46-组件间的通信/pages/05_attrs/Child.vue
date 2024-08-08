@@ -1,6 +1,6 @@
 <template>
     <div class="child">
-        <h4>我是子组件</h4>
+        <h4>我是儿子组件</h4>
         <!-- 这里注意一个点：要传一组数据的时候使用v-bind -->
         <GrandChild v-bind="$attrs"/>
     </div>

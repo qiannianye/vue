@@ -1,6 +1,6 @@
 <template>
     <div class="grand-child">
-        <h4>我是孙组件</h4>
+        <h4>我是孙组件, 单根组件，attribute可以直接透传给组件的根节点</h4>
         <h5>孙的玩具：{{ toy }}</h5>
         <h6>爷爷的财产：房子-{{ house.name }}-{{ house.price }}w，车子-{{ house.car.name }}-{{ house.car.price }}w</h6>
         <button @click="sendToy(toy)">把玩具送给爷爷</button>
