@@ -11,6 +11,7 @@
 
         <!-- 命名的Transition，过渡的css会以名字开头（fade-)，不再是v-开头 -->
         <Transition name="fade" mode="out-in">
+            <!-- 动态引入组件 -->
             <component :is="show? A : B"></component>
         </Transition>
 
@@ -18,12 +19,14 @@
             <span :key="count">world{{ count }}</span>
         </Transition>
     </div>
+    <C/>
 </template>
 
 <script lang='ts' setup>
     import { ref } from 'vue';
     import A from './components/A.vue';
     import B from './components/B.vue';
+    import C from './components/C.vue';
 
     let show = ref(false)
     let count = ref(0)
